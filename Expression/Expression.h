@@ -9,5 +9,5 @@ class Expression
 {
 public:
    Expression() {}
-   virtual real compute(map<string, real>& variableValues) = 0;
+   virtual real compute(const map<string, real>& variableValues) const = 0;
 };
