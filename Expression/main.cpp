@@ -15,7 +15,7 @@ int main()
    Variable<double> c("c");
    Variable<double> d("d");
    //Scalar<double>* exp = new ScalarSum<double>(a, b);
-   auto res = a + b - c;
+   auto res = (a + b - c) * d;
 
    cout << res.compute(variableNames);
 

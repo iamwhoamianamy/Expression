@@ -53,5 +53,8 @@
     <ClInclude Include="Constant.h">
       <Filter>Файлы заголовков\Expression\Scalar</Filter>
     </ClInclude>
+    <ClInclude Include="ScalarMultiplication.h">
+      <Filter>Файлы заголовков\Expression\Scalar\ScalarBinaryOperation</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
