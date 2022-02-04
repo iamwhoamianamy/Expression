@@ -5,18 +5,20 @@
 int main()
 {
    map<string, double> variableNames;
+
    variableNames["a"] = 3;
    variableNames["b"] = 10;
    variableNames["c"] = 5;
    variableNames["d"] = 4;
 
-   Variable<double> a("a");
-   Variable<double> b("b");
-   Variable<double> c("c");
-   Variable<double> d("d");
-   //Scalar<double>* exp = new ScalarSum<double>(a, b);
-   auto res = (a + b - c) * d;
+   Scalar<double>* a = new Variable<double>("a");
+   Scalar<double>* b = new Variable<double>("b");
+   Scalar<double>* c = new Variable<double>("c");
+   Scalar<double>* d = new Variable<double>("d");
 
-   cout << res.compute(variableNames);
+   //auto res = a->plus(b)->minus(c)->mult(d)->mult(new Constant<double>(10));
+   auto exp = a->mult(new Constant<double>(4))->mult(a)->plus(a);
+   auto res = exp->differentiate(a);
 
+   cout << res->compute(variableNames);
 }
