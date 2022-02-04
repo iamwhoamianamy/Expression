@@ -29,7 +29,7 @@ inline real Variable<real>::compute(const map<string, real>& variableValues) con
 template<class real>
 inline Scalar<real>* Variable<real>::differentiate(const Scalar<real>* variable) const
 {
-   return new Constant<real>(this == variable ? 1 : 0) ;
+   return new Constant<real>(this->operator==(variable) ? 1 : 0) ;
 }
 
 template<class real>
