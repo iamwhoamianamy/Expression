@@ -11,14 +11,17 @@ int main()
    variableNames["c"] = 5;
    variableNames["d"] = 4;
 
-   Scalar<double>* a = new Variable<double>("a");
-   Scalar<double>* b = new Variable<double>("b");
-   Scalar<double>* c = new Variable<double>("c");
-   Scalar<double>* d = new Variable<double>("d");
+   //Scalar<double>* a = new Variable<double>("a");
+   //Scalar<double>* b = new Variable<double>("b");
+   //Scalar<double>* c = new Variable<double>("c");
+   //Scalar<double>* d = new Variable<double>("d");
 
-   //auto res = a->plus(b)->minus(c)->mult(d)->mult(new Constant<double>(10));
-   auto exp = a->mult(new Constant<double>(4))->mult(a)->plus(a);
-   auto res = exp->differentiate(a);
+   ////auto res = a->plus(b)->minus(c)->mult(d)->mult(new Constant<double>(10));
+   //auto exp = a->mult(new Constant<double>(4))->mult(a)->plus(a);
+   //auto res = exp->differentiate(a);
 
-   cout << res->compute(variableNames);
+   //cout << res->compute(variableNames);
+
+   auto exp = Scalar<double>::parse("( b + a )");
+   cout << exp->compute(variableNames);
 }

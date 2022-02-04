@@ -24,6 +24,6 @@ inline real ScalarSubtraction<real>::compute(const map<string, real>& variableVa
 template<class real>
 inline Scalar<real>* ScalarSubtraction<real>::differentiate(const Scalar<real>* variable) const
 {
-   return new ScalarSubtraction(*ScalarBinaryOperation<real>::_a->differentiate(variable),
-                                *ScalarBinaryOperation<real>::_b->differentiate(variable));
+   return new ScalarSubtraction(ScalarBinaryOperation<real>::_a->differentiate(variable),
+                                ScalarBinaryOperation<real>::_b->differentiate(variable));
 }
