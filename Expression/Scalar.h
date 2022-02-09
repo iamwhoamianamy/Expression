@@ -22,82 +22,8 @@ private:
 template<class real>
 Scalar<real>* Scalar<real>::parse(const string& str)
 {
-   stringstream stream;
-   stream.str(str);
-
-   stack<Scalar<real>*> operands;
-   stack<char> operators;
-   string symbol;
-
-   while(stream >> symbol)
-   {
-      real value;
-      try
-      {
-         real value = stod(symbol);
-         auto op = new Constant<real>(value);
-         operands.push(op);
-
-         continue;
-      }
-      catch (exception ex) { }
-
-      if(symbol == ")")
-      {
-         char operand = operators.top();
-         operators.pop();
-
-         Scalar<real>* right = operands.top();
-         operands.pop();
-
-         Scalar<real>* left = operands.top();
-         operands.pop();
-
-         switch(operand)
-         {
-            case '+':
-            {
-               operands.push(new ScalarSum<real>(left, right));
-               break;
-            }
-            case '*':
-            {
-               operands.push(new ScalarMultiplication<real>(left, right));
-               break;
-            }
-            case '-':
-            {
-               operands.push(new ScalarSubtraction<real>(left, right));
-               break;
-            }
-            default:
-               break;
-         }
-      }
-      else
-      {
-         if(symbol == "+" || symbol == "-" || symbol == "*")
-         {
-            operators.push(symbol[0]);
-         }
-         else
-         {
-            if(symbol == "(")
-            {
-
-            }
-            else
-            {
-               operands.push(new Variable<real>(symbol));
-            }
-         }
-      }
-   }
-
-   Scalar<real>* res = operands.top();
-   operands.pop();
-
-   return res;
+   ScalarParser<real> scalarParser;
+   return scalarParser.parse(str);
 }
 
 template<class real>

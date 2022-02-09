@@ -147,7 +147,9 @@
     <ClInclude Include="Scalar.h" />
     <ClInclude Include="ScalarArythmetics.h" />
     <ClInclude Include="ScalarBinaryOperation.h" />
+    <ClInclude Include="ScalarClasses.h" />
     <ClInclude Include="ScalarMultiplication.h" />
+    <ClInclude Include="ScalarParser.h" />
     <ClInclude Include="ScalarSubtraction.h" />
     <ClInclude Include="ScalarSum.h" />
     <ClInclude Include="Variable.h" />

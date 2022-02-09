@@ -22,6 +22,8 @@ int main()
 
    //cout << res->compute(variableNames);
 
-   auto exp = Scalar<double>::parse("( a * a )");
-   cout << exp->differentiate(a)->compute(variableNames);
+   auto exp = Scalar<double>::parse("(a+b+(c*2))+3");
+   //auto exp = Scalar<double>::parse("( a + b )");
+   cout << exp->compute(variableNames);
+   //cout << exp->differentiate(a)->compute(variableNames);
 }
