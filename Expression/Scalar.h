@@ -1,7 +1,7 @@
 #pragma once
 #include "Expression.h"
-#include <sstream>
-#include <stack>
+#include "ScalarClasses.h"
+#include "ScalarParser.h"
 
 template <class real>
 class Scalar : public Expression<real>
@@ -18,20 +18,6 @@ private:
    virtual bool isEqual(const Scalar<real>* other) const = 0;
 };
 
-template<class real>
-class ScalarSum;
-
-template<class real>
-class ScalarSubtraction;
-
-template<class real>
-class ScalarMultiplication;
-
-template<class real>
-class Constant;
-
-template<class real>
-class Variable;
 
 template<class real>
 Scalar<real>* Scalar<real>::parse(const string& str)

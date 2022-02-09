@@ -56,5 +56,11 @@
     <ClInclude Include="ScalarMultiplication.h">
       <Filter>Файлы заголовков\Expression\Scalar\ScalarBinaryOperation</Filter>
     </ClInclude>
+    <ClInclude Include="ScalarParser.h">
+      <Filter>Файлы заголовков\Expression\Scalar</Filter>
+    </ClInclude>
+    <ClInclude Include="ScalarClasses.h">
+      <Filter>Файлы заголовков\Expression\Scalar</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
