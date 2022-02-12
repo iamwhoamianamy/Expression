@@ -13,6 +13,7 @@ public:
    Scalar<real>* minus(const Scalar<real>* other) const;
    Scalar<real>* mult(const Scalar<real>* other) const;
    virtual Scalar<real>* differentiate(const Scalar<real>* variable) const = 0;
+   Scalar<real>* differentiate(const string& variable) const;
    bool operator==(const Scalar<real>* other) const;
 private:
    virtual bool isEqual(const Scalar<real>* other) const = 0;
@@ -42,6 +43,12 @@ template<class real>
 inline Scalar<real>* Scalar<real>::mult(const Scalar<real>* other) const
 {
    return new ScalarMultiplication<real>(this, other);
+}
+
+template<class real>
+inline Scalar<real>* Scalar<real>::differentiate(const string& variable) const
+{
+   return differentiate(new Variable<real>(variable));
 }
 
 template<class real>
