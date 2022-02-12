@@ -57,19 +57,22 @@ inline Scalar<real>* ScalarParser<real>::parse(const string& str)
 template<class real>
 inline string ScalarParser<real>::formEasyToParseString(const string& str)
 {
-   string result = "(";
+   string result = "( ";
 
    for(auto letter : str)
    {
       result += formEasyToParseStringEntry(string(1, letter));
    }
 
-   return result + ")";
+   return result + " )";
 }
 
 template<class real>
 inline string ScalarParser<real>::formEasyToParseStringEntry(const string& letter)
 {
+   if(letter == " ")
+      return "";
+
    auto potentialSeparator1 = find(separators.begin(), separators.end(), letter);
    if(potentialSeparator1 != separators.end())
    {
